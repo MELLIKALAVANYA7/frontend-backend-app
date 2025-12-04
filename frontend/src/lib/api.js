@@ -1,5 +1,7 @@
+// Backend API URL - first try environment variable, else fallback to Render URL
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://frontend-backend-app.onrender.com/api";
 
+// Main API request function
 export async function apiRequest(path, method = "GET", body) {
   console.log("API URL:", API_URL);
 
@@ -25,3 +27,5 @@ export async function apiRequest(path, method = "GET", body) {
 
   return { ok: res.ok, data };
 }
+
+export default apiRequest;
